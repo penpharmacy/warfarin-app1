@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>คำนวณ Warfarin</title>
+<style>
+  body { font-family: Tahoma, sans-serif; padding: 20px; background: linear-gradient(135deg, #fceabb, #f8b500); }
+  table { border-collapse: collapse; margin-bottom: 15px; width: 100%; max-width: 500px; background: #fff3cd; border-radius: 10px; overflow: hidden; }
+  th { background: #f59e0b; color: white; }
+  td, th { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  input { width: 70px; text-align: center; border-radius: 6px; border: 1px solid #f59e0b; padding: 5px; }
+  .result { font-weight: bold; margin-top: 15px; font-size: 1.2em; color: #b91c1c; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); display: inline-block; }
+  button { background: #f59e0b; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+  button:hover { background: #d97706; }
+</style>
+</head>
+<body>
+<h2 style="color:#b45309">คำนวณ Warfarin ต่อสัปดาห์</h2>
+
+<table>
+  <tr>
+    <th>วัน</th><th>2 mg (เม็ด)</th><th>3 mg (เม็ด)</th>
+  </tr>
+  <script>
+    const days = ["จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์","อาทิตย์"];
+    for(let i=0;i<7;i++){
+      document.write(`<tr>
+        <td>${days[i]}</td>
+        <td><input type="number" step="0.5" id="d2_${i}" value="0" min="0"></td>
+        <td><input type="number" step="0.5" id="d3_${i}" value="0" min="0"></td>
+      </tr>`);
+    }
+  </script>
+</table>
+
+<label>ค่าเดิม (mg/สัปดาห์): </label>
+<input type="number" id="oldDose" value="0" step="0.5"><br><br>
+
+<!-- ปุ่มคำนวณ -->
+<button onclick="calculate()">คำนวณ</button>
+
+<div class="result" id="output">กรอกข้อมูลเพื่อคำนวณ</div>
+
+<script>
+function calculate(){
+  let total = 0;
+  for(let i=0;i<7;i++){
+    let n2 = parseFloat(document.getElementById("d2_"+i).value)||0;
+    let n3 = parseFloat(document.getElementById("d3_"+i).value)||0;
+    total += (n2*2) + (n3*3);
+  }
+
+  let oldDose = parseFloat(document.getElementById("oldDose").value)||0;
+  let msg = `ปริมาณรวม: ${total} mg/สัปดาห์`;
+  
+  if(oldDose>0){
+    let diff = total - oldDose;
+    let percent = (diff/oldDose*100).toFixed(2);
+    if(diff>0){
+      msg += `<br>เพิ่มขึ้น ${percent}% จากค่าเดิม`;
+    }else if(diff<0){
+      msg += `<br>ลดลง ${Math.abs(percent)}% จากค่าเดิม`;
+    }else{
+      msg += `<br>ปริมาณเท่าเดิม (0% เปลี่ยนแปลง)`;
+    }
+  }
+
+  document.getElementById("output").innerHTML = msg;
+}
+</script>
+</body>
+</html>
+
