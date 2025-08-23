@@ -26,42 +26,58 @@
     for(let i=0;i<7;i++){
       document.write(`<tr>
         <td>${days[i]}</td>
-        <td><input type="number" step="0.5" id="d2_${i}" value="0" min="0"></td>
-        <td><input type="number" step="0.5" id="d3_${i}" value="0" min="0"></td>
+        <td><input type="number" step="0.5" id="d2_${i}" value="" min="0"></td>
+        <td><input type="number" step="0.5" id="d3_${i}" value="" min="0"></td>
       </tr>`);
     }
   </script>
 </table>
 
 <label>ค่าเดิม (mg/สัปดาห์): </label>
-<input type="number" id="oldDose" value="0" step="0.5"><br><br>
+<input type="number" id="oldDose" value="" step="0.5"><br><br>
 
-<!-- ปุ่มคำนวณ -->
+<label>จำนวนวันนัด: </label>
+<input type="number" id="numDays" value="7" min="1" step="1"><br><br>
+
 <button onclick="calculate()">คำนวณ</button>
 
 <div class="result" id="output">กรอกข้อมูลเพื่อคำนวณ</div>
 
 <script>
 function calculate(){
-  let total = 0;
+  let totalWeekly7 = 0;  // สำหรับผลต่าง fix 7 วัน
+  let total2 = 0;
+  let total3 = 0;
+  
   for(let i=0;i<7;i++){
     let n2 = parseFloat(document.getElementById("d2_"+i).value)||0;
     let n3 = parseFloat(document.getElementById("d3_"+i).value)||0;
-    total += (n2*2) + (n3*3);
+    total2 += n2;
+    total3 += n3;
+    totalWeekly7 += (n2*2) + (n3*3);
   }
 
   let oldDose = parseFloat(document.getElementById("oldDose").value)||0;
-  let msg = `ปริมาณรวม: ${total} mg/สัปดาห์`;
-  
+  let numDays = parseInt(document.getElementById("numDays").value)||7;
+  let factor = numDays / 7;
+
+  let total2ToGive = Math.ceil(total2 * factor);
+  let total3ToGive = Math.ceil(total3 * factor);
+  let totalMgToGive = total2ToGive*2 + total3ToGive*3;
+
+  let msg = `จำนวนวันที่นัด: ${numDays} วัน<br>`;
+  msg += `จำนวนเม็ดที่ควรจ่ายจริง: 2 mg = ${total2ToGive} เม็ด, 3 mg = ${total3ToGive} เม็ด (รวม ${totalMgToGive} mg)<br><br>`;
+
   if(oldDose>0){
-    let diff = total - oldDose;
-    let percent = (diff/oldDose*100).toFixed(2);
-    if(diff>0){
-      msg += `<br>เพิ่มขึ้น ${percent}% จากค่าเดิม`;
-    }else if(diff<0){
-      msg += `<br>ลดลง ${Math.abs(percent)}% จากค่าเดิม`;
-    }else{
-      msg += `<br>ปริมาณเท่าเดิม (0% เปลี่ยนแปลง)`;
+    // ผลต่าง fix 7 วัน
+    let diffMg = totalWeekly7 - oldDose;
+    let diffPct = ((diffMg)/oldDose*100).toFixed(2);
+    if(diffMg>0){
+      msg += `เพิ่มขึ้น ${diffMg} mg (+${diffPct}%) จากค่าเดิม`;
+    } else if(diffMg<0){
+      msg += `ลดลง ${Math.abs(diffMg)} mg (${diffPct}%) จากค่าเดิม`;
+    } else{
+      msg += `ปริมาณเท่าเดิม (0 mg / 0% เปลี่ยนแปลง)`;
     }
   }
 
