@@ -1466,6 +1466,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 html += `<div class="summary-line"><span class="summary-pill pill-icon-2mg"></span> 2 mg: ${total2PillCount} เม็ด</div>`;
             }
             html += `</div>`;
+      <!-- ... existing code ... -->
         } else {
             const pillTypes = [];
             if (pillChoice === '3' || pillChoice === 'both' || pillChoice === 'both_half' || pillChoice === '3mg_fixed_1dayoff') pillTypes.push({ label: '3 mg (เม็ด)', type: 3 });
@@ -1491,13 +1492,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     const mg = t3*3 + t2*2;
                     let value = '';
                     if (pillType.type === 3) {
-                        if ((isFixedDose || combo.type === 'custom_hold_days') && t3 === 0) {
+                        // 🌟 แก้ไขตรรกะ: จะลงคำว่า "หยุด" ก็ต่อเมื่อเป็นวันหยุดยาที่ยอดรวม mg เป็น 0 จริง ๆ เท่านั้น
+                        if (mg === 0) {
                             value = '<span style="color: var(--main-pink); font-weight: 700;">หยุด</span>';
                         } else {
                             value = t3 % 1 === 0 ? t3 : t3.toFixed(1);
                         }
                     } else if (pillType.type === 2) {
-                        if ((isFixedDose || combo.type === 'custom_hold_days') && t2 === 0) {
+                        // 🌟 แก้ไขตรรกะ: จะลงคำว่า "หยุด" ก็ต่อเมื่อเป็นวันหยุดยาที่ยอดรวม mg เป็น 0 จริง ๆ เท่านั้น
+                        if (mg === 0) {
                             value = '<span style="color: var(--main-pink); font-weight: 700;">หยุด</span>';
                         } else {
                             value = t2 % 1 === 0 ? t2 : t2.toFixed(1);
@@ -1526,6 +1529,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             html += `</tbody></table>`;
             const currentDaysInput = isTab1 ? document.getElementById('days') : document.getElementById('manualDaysInput');
+<!-- ... existing code ... -->
             const calculatedDaysVal = currentDaysInput ? (parseInt(currentDaysInput.value) || 0) : 7;
             let noteText = `สรุปจำนวนเม็ดยา (${calculatedDaysVal} วันนัด)\n`;
             if(total3PillCount > 0 && (pillChoice === '3' || pillChoice === 'both' || pillChoice === 'both_half' || pillChoice === '3mg_fixed_1dayoff')) noteText += `รวม 3 mg: ${total3PillCount} เม็ด\n`;
