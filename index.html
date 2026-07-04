@@ -53,7 +53,7 @@
 /* แถว therapeutic */
 .guideline-green td,
 .guideline-green td strong {
-    color: #263238 !important; 
+    color: #263238 !important; /* ปรับสีตัวอักษร 2-3 ใช้ขนาดยาเดิม เป็นสีดำตามปกติ */
     font-weight: 700;
 }
 
@@ -157,12 +157,12 @@
     }
 }
 
-/* --- COPY PROTECTION STYLES (เดิม) --- */
+/* --- COPY PROTECTION STYLES --- */
 body {
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
     background:linear-gradient(180deg,var(--bg),#FFFFFF);
     margin:0;
     padding:20px;
@@ -183,16 +183,12 @@ body {
     --plan-bg-4: #FFF8FA;
     --plan-bg-5: #F8FFF9;
     --plan-bg-6: #F9F8FF;
-    --plan-bg-7: #FFFDE7;
-    --plan-bg-8: #F0FFF4;
     --plan-border-1: #40B2D6;
     --plan-border-2: #FFAD60;
     --plan-border-3: #AA8CFF;
     --plan-border-4: #E91E63;
     --plan-border-5: #4CAF50;
     --plan-border-6: #9C27B0;
-    --plan-border-7: #FFC107;
-    --plan-border-8: #00A896;
 
     --main-pink: #E91E63;
     --light-pink: #FDE8F1;
@@ -257,8 +253,6 @@ th{background:var(--accent-light);color:#004D40}
 .plan-table.plan-4 tbody tr:nth-child(odd) { background-color: #FFF8FA; }
 .plan-table.plan-5 tbody tr:nth-child(odd) { background-color: #F8FFF9; }
 .plan-table.plan-6 tbody tr:nth-child(odd) { background-color: #FAF5FF; }
-.plan-table.plan-7 tbody tr:nth-child(odd) { background-color: #FFFDE7; }
-.plan-table.plan-8 tbody tr:nth-child(odd) { background-color: #E8F5E9; }
 .small{font-size:13px;color:var(--muted)}
 .note{background:var(--accent-light);padding:10px;border-radius:10px;margin-top:8px;white-space:pre-line;color:#004D40}
 footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
@@ -270,8 +264,6 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 .plan-section.plan-4 { background-color: var(--plan-bg-4); border-left: 5px solid var(--plan-border-4);}
 .plan-section.plan-5 { background-color: var(--plan-bg-5); border-left: 5px solid var(--plan-border-5);}
 .plan-section.plan-6 { background-color: var(--plan-bg-6); border-left: 5px solid var(--plan-border-6);}
-.plan-section.plan-7 { background-color: var(--plan-bg-7); border-left: 5px solid var(--plan-border-7);}
-.plan-section.plan-8 { background-color: var(--plan-bg-8); border-left: 5px solid var(--plan-border-8);}
 .plan-table { min-width: 700px; }
 .plan-grid { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 8px; }
 .day-card { min-width: 120px; flex-grow: 1; text-align: center; padding: 10px 5px; border-radius: 12px; border: 1px solid #E0E0E0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); background-color: #FFFFFF; }
@@ -288,8 +280,8 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 .pill-container { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; align-items: center; padding: 4px 0; min-height: 32px; }
 .pill-icon-wrapper { position: relative; display: inline-block; flex-shrink: 1; --pill-size: 24px; }
 .pill-icon { width: var(--pill-size); height: var(--pill-size); border-radius: 50%; display: inline-block; cursor: default; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: all 0.2s ease; }
-.pill-icon-3mg { background-color: #4FC3F7; } 
-.pill-icon-2mg { background-color: #FFB74D; } 
+.pill-icon-3mg { background-color: #4FC3F7; } /* สีฟ้า */
+.pill-icon-2mg { background-color: #FFB74D; } /* สีส้ม */
 .half-pill { width: var(--pill-size); height: var(--pill-size); border-radius: 50%; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
 .pill-container.shrink-pills .pill-icon-wrapper { --pill-size: 18px; gap: 2px; }
 .pill-container.shrink-pills .pill-icon-wrapper .tooltip-text { font-size: 10px; }
@@ -309,7 +301,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 #btnDecreaseDose:hover { background: #D32F2F !important; }
 #btnIncreaseDose:hover { background: #388E3C !important; }
 
-/* --- TAB STYLES (NEW MULTIPAGE) --- */
+/* --- TAB STYLES --- */
 .tab-container {
     display: flex;
     gap: 8px;
@@ -393,20 +385,20 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 /* ภาชนะย่อยสำหรับ Warfarin 2mg และ 3mg (ให้แบ่งพื้นที่เท่าๆ กัน) */
 .pill-dosing-container {
     display: flex;
-    flex-direction: column; 
-    flex: 1 1 30%; 
+    flex-direction: column; /* จัดองค์ประกอบในแนวตั้งภายในกรอบ */
+    flex: 1 1 30%; /* แบ่งพื้นที่ให้เท่าๆ กัน 30% */
 }
 
 .dose-input-group {
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 8px;
-    flex-grow: 1; 
+    flex-grow: 1; /* ให้กรอบยืดเต็มความสูงของ column */
 }
 
 /* 🌟 สไตล์ Warfarin 2 mg (โทนส้ม) */
 #dose2mgContainer {
-    background: #FFFBF8; 
+    background: #FFFBF8; /* ขาวอมส้ม */
     border: 1px solid #FFAD60;
 }
 #dose2mgContainer .pill-section-title {
@@ -416,7 +408,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 
 /* 🌟 สไตล์ Warfarin 3 mg (โทนฟ้า) */
 #dose3mgContainer {
-    background: #F8FFFF; 
+    background: #F8FFFF; /* ขาวอมฟ้า */
     border: 1px solid #40B2D6;
 }
 #dose3mgContainer .pill-section-title {
@@ -429,7 +421,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
     align-items: center;
     gap: 5px;
     margin-top: 8px;
-    font-size: 13px; 
+    font-size: 13px; /* ทำให้กะทัดรัดขึ้น */
 }
 
 .dose-input-row label {
@@ -442,7 +434,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 }
 
 .dose-input-row input[type="number"] {
-    width: 45px; 
+    width: 45px; /* ลดขนาดช่องป้อนตัวเลข */
     padding: 6px;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -456,7 +448,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
     font-weight: 600;
     margin-bottom: 5px;
     padding-bottom: 5px;
-    text-align: center; 
+    text-align: center; /* จัดให้อยู่ตรงกลางของกรอบเล็ก */
 }
 
 .add-row-btn {
@@ -470,17 +462,17 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
     transition: background-color 0.2s;
     margin-top: 5px;
     font-size: 12px;
-    width: 100%; 
+    width: 100%; /* ให้ปุ่มกว้างเต็มกรอบ */
 }
 .add-row-btn:hover { background: #FFDDEE; }
 
 /* 🌟 ส่วนเปรียบเทียบและการจ่ายยา (โทนขาว) */
 .comparison-section {
-    flex: 1 1 40%; 
+    flex: 1 1 40%; /* ให้พื้นที่มากกว่า 2mg/3mg */
     padding: 15px;
     border-radius: 8px;
-    background: #FFFFFF; 
-    border: 1px solid #cfd8dc; 
+    background: #FFFFFF; /* สีพื้นหลังขาว */
+    border: 1px solid #cfd8dc; /* ขอบเทาอ่อน */
 }
 
 .comparison-section h4 {
@@ -540,6 +532,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
 .clear-btn:hover { background: #B0B0B0; }
 
 @media(max-width:900px){
+    /* บนหน้าจอเล็ก จัดเรียงเป็นแนวตั้ง */
     .dosing-comparison-container {
         flex-direction: column;
     }
@@ -570,12 +563,16 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
         <h1>เครื่องคำนวณการให้ยา Warfarin โรงพยาบาลพุนพิน</h1>
     </header>
 
+    <!-- แท็บสลับหน้าแสดงผล -->
     <div class="tab-container">
         <button class="tab-btn active" onclick="switchTab('tab-guideline')">📋 ปรับยาตามแนวทาง (INR Guideline)</button>
         <button class="tab-btn" onclick="switchTab('tab-manual')">⚙️ ปรับขนาดยาด้วยตนเอง (Manual Dose Planner)</button>
         <button class="tab-btn" onclick="switchTab('tab-standalone')">🧮 คำนวณกลับจากจำนวนเม็ด</button>
     </div>
 
+    <!-- ========================================== -->
+    <!-- 📋 แท็บที่ 1: ปรับยาตามแนวทาง (INR Guideline) -->
+    <!-- ========================================== -->
     <div id="tab-guideline" class="tab-content active">
         <div class="main-top-layout">
             <div class="calculator-panel">
@@ -605,6 +602,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                             </div>
                         </div>
 
+                        <!-- ส่วนการปรับขนาดยาด้วยตัวเองแบบละเอียดเพิ่มลดทีละ 0.5 mg (แท็บที่ 1) -->
                         <div style="margin-top:14px; padding: 12px; background: #FFFDE7; border-radius: 12px; border: 1.5px solid #FFE082;">
                             <label style="font-weight: 600; color: #F57F17; display: flex; align-items: center; gap: 8px; margin-bottom: 0; cursor: pointer; user-select: none;">
                                 <input type="checkbox" id="manualAdjustToggleTab1" style="transform: scale(1.2); cursor: pointer;">
@@ -655,6 +653,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                 </section>
             </div>
 
+            <!-- แผงด้านข้างอ้างอิงภาพ image_73eb0d.png -->
             <div class="guideline-panel">
                 <div class="card guideline-card">
                     <div class="guideline-title">
@@ -719,6 +718,9 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
         </section>
     </div>
 
+    <!-- ========================================== -->
+    <!-- ⚙️ แท็บที่ 2: ปรับขนาดยาด้วยตนเอง (Manual Planner) -->
+    <!-- ========================================== -->
     <div id="tab-manual" class="tab-content">
         <div class="main-top-layout">
             <div class="calculator-panel">
@@ -728,6 +730,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                         ระบุค่าอินพุตของคุณ ขนาดยาเป้าหมายใหม่ที่เหมาะสมจะอัปเดตและเชื่อมต่อลงในแผงควบคุมด้านล่างทันที ระบบจะคัดกรองวิธีรับประทานยาที่สม่ำเสมอสถิตดีที่สุดไม่มีวันหยุดยาแสดงให้คุณก่อนเป็นตัวเลือกหลัก
                     </p>
                     
+                    <!-- วันนัดและข้อมูลควบคุม แสดงเห็นเพื่อแก้ไขได้ตลอดเวลา -->
                     <div class="row">
                         <div class="col">
                             <label>INR ปัจจุบัน</label>
@@ -768,6 +771,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                         <button type="button" id="btnClearManual" class="clear-btn" style="padding: 10px 15px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s;">ล้างข้อมูล</button>
                     </div>
 
+                    <!-- Giant Target Dose Controller Panel -->
                     <div style="margin-top:20px; padding: 18px; background: #FFFDE7; border-radius: 16px; border: 1.5px solid #FFE082; text-align: center;">
                         <label style="font-weight: 600; color: #5D4037; font-size:16px; display:block; margin-bottom:8px;">ขนาดยาเป้าหมายใหม่ที่ต้องการจัดแผน (ปรับเพิ่มเติมได้ครั้งละ 0.5 mg)</label>
                         
@@ -790,6 +794,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                     <div id="manualGuidelineCard" style="margin-top:16px; border-radius:8px; display:none;"></div>
                 </div>
 
+                <!-- แสดงผลลัพธ์แผนการกินยาหลักที่ดีที่สุด -->
                 <section class="card" style="border-top: 4px solid var(--accent)">
                     <h3 style="color:var(--accent); margin-top:0;">📋 ตารางแสดงวิธีและแผนการให้ยา</h3>
                     <p class="small" style="color:#5A6A70; margin-bottom:15px;">ประมวลผลสำหรับขนาดยาเป้าหมายรวม <strong id="lblTargetDose">-</strong> mg/สัปดาห์</p>
@@ -799,20 +804,22 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                     </div>
                     <div id="manualBestPlanOutput"></div>
 
+                    <!-- ปุ่มท็อกเกิล แสดง/ซ่อน แผนอื่น ๆ -->
                     <div style="margin: 20px 0;">
                         <button type="button" id="btnToggleOtherPlans" class="tab-btn" style="background-color: var(--accent); color: white; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; border-radius: 12px; height: 48px; box-shadow: 0 4px 10px rgba(0, 168, 150, 0.2);">
                             📂 แสดงวิธีกินทางเลือกอื่นๆ
                         </button>
                     </div>
 
+                    <!-- ส่วนซ่อนแผนทางเลือกรับประทานยาอื่นๆ และวิธีกระจายยาตามเกณฑ์ 0.5 mg -->
                     <div id="manualOtherPlansContainer" style="display: none; border-top: 2px dashed #B2DFDB; padding-top: 15px;">
                         <div style="font-weight: 600; color: #E91E63; margin-bottom: 10px; font-size: 15px;">
                             📊 ตารางแผนการให้ยาเชิงรุกก้าวละเอียดทีละ 0.5 mg รอบช่วงแนะนำ (Step-by-Step 0.5 mg Calculator)
                         </div>
                         <div id="manualStepByStepOutput" style="margin-bottom: 24px;"></div>
 
-                        <div style="font-weight: 600; color: #004D40; margin-bottom: 10px; font-size: 15px; border-top: 2px solid #B2DFDB; padding-top: 15px;">
-                            📦 วิธีรับประทานยาทางเลือกอื่น ๆ ครบทุกกรณี (แยกตามรูปแบบเม็ดยาและการแบ่งส่วน):
+                        <div style="font-weight: 600; color: var(--muted); margin-bottom: 10px; font-size: 14px; border-top: 2px solid #F8BBD0; padding-top: 15px;">
+                            📦 วิธีรับประทานยาทางเลือกอื่น ๆ (รวมแผนยาที่มีวันหยุด 1-3 วัน และการสลับขนาด):
                         </div>
                         <div id="manualOtherPlansOutput"></div>
                     </div>
@@ -823,6 +830,7 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
                 </section>
             </div>
 
+            <!-- แผงแสดงคู่มือด้านข้างในหน้าแมนนวลตามรูป image_73eb0d.png -->
             <div class="guideline-panel">
                 <div class="card guideline-card">
                     <div class="guideline-title">
@@ -879,6 +887,9 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
         </div>
     </div>
 
+    <!-- ========================================== -->
+    <!-- 🧮 แท็บที่ 3: คำนวณกลับจากจำนวนเม็ด (Standalone) -->
+    <!-- ========================================== -->
     <div id="tab-standalone" class="tab-content">
         <div class="standalone-calculator">
             <div class="calculator-header-new">เครื่องคิดคำนวณหาปริมาณ mg รวมใน 7 วัน ของ warfarin</div>
@@ -938,6 +949,9 @@ footer{font-size:13px;color:var(--muted);text-align:center;padding:8px}
     <footer class="card small">คำเตือน: เครื่องมือนี้เป็นเครื่องมือช่วยคำนวณเท่านั้น ไม่ใช่คำสั่งการรักษา เเพทย์/เภสัชกรเป็นผู้ตัดสินใจขั้นสุดท้าย</footer>
 </div>
 
+<!-- ****************************************************** -->
+<!--                   JAVASCRIPT LOGIC                     -->
+<!-- ****************************************************** -->
 <script>
 document.onkeydown = function(e) {
     if (e.keyCode == 123 || 
@@ -1170,6 +1184,121 @@ document.addEventListener('DOMContentLoaded', function() {
         return score;
     }
 
+    // 🌟 ใหม่: ค้นหาสัดส่วนการกระจายขนาดยาที่ดีที่สุด (เสถียรที่สุด) ตามจำนวนวันหยุดที่กำหนด (DFS)
+    function findBestDoseDistribution(target, numDays, allowedSet) {
+        let bestCombo = null;
+        let bestSpread = Infinity;
+        let bestVariance = Infinity;
+        
+        allowedSet = [...allowedSet].sort((a,b) => a - b);
+        
+        function dfs(index, count, currentSum, currentPath) {
+            if (count === numDays) {
+                if (Math.abs(currentSum - target) < 0.01) {
+                    let max = Math.max(...currentPath);
+                    let min = Math.min(...currentPath);
+                    let spread = max - min;
+                    let mean = currentSum / numDays;
+                    let variance = currentPath.reduce((acc, v) => acc + Math.pow(v - mean, 2), 0);
+                    if (spread < bestSpread || (spread === bestSpread && variance < bestVariance)) {
+                        bestSpread = spread;
+                        bestVariance = variance;
+                        bestCombo = [...currentPath];
+                    }
+                }
+                return;
+            }
+            let remaining = numDays - count;
+            let minAllowed = allowedSet[0];
+            let maxAllowed = allowedSet[allowedSet.length - 1];
+            if (currentSum + remaining * minAllowed > target + 0.01) return;
+            if (currentSum + remaining * maxAllowed < target - 0.01) return;
+
+            for (let i = index; i < allowedSet.length; i++) {
+                currentPath.push(allowedSet[i]);
+                dfs(i, count + 1, currentSum + allowedSet[i], currentPath);
+                currentPath.pop();
+            }
+        }
+        
+        dfs(0, 0, 0, []);
+        return bestCombo;
+    }
+
+    // 🌟 ใหม่: ค้นหาจำนวนเม็ดยา 2 mg และ 3 mg ที่เบี่ยงเบนจากเป้าหมายน้อยที่สุดและเม็ดรวมน้อยที่สุด
+    function getPillsForDose(d, pillType, allowHalf) {
+        let step = allowHalf ? 0.5 : 1.0;
+        let bestP3 = 0;
+        let bestP2 = 0;
+        let minPieces = Infinity;
+        
+        let max3 = Math.ceil(d / 3.0) + 1;
+        let max2 = Math.ceil(d / 2.0) + 1;
+        
+        for (let p3 = 0; p3 <= max3; p3 += step) {
+            for (let p2 = 0; p2 <= max2; p2 += step) {
+                if (pillType === '3mg_only' && p2 > 0) continue;
+                if (pillType === '2mg_only' && p3 > 0) continue;
+                
+                if (Math.abs(p3 * 3 + p2 * 2 - d) < 1e-9) {
+                    let pieces = p3 + p2;
+                    let mixPenalty = (p3 > 0 && p2 > 0) ? 10 : 0;
+                    let score = pieces + mixPenalty;
+                    if (score < minPieces) {
+                        minPieces = score;
+                        bestP3 = p3;
+                        bestP2 = p2;
+                    }
+                }
+            }
+        }
+        return { p3: bestP3, p2: bestP2 };
+    }
+
+    // 🌟 ใหม่: ประกอบคอมโบรายวันและสัญกรณ์แผนสำหรับวันหยุดยา
+    function buildHoldDaysCombo(activeCombo, holdDays, pillType, allowHalf, targetDose) {
+        let dailyDoses = Array(7).fill(0);
+        let holdIndices = [];
+        if (holdDays === 1) {
+            holdIndices = [6]; // พักวันอาทิตย์
+        } else if (holdDays === 2) {
+            holdIndices = [3, 6]; // พักวันพฤหัสบดี, อาทิตย์
+        } else if (holdDays === 3) {
+            holdIndices = [1, 4, 6]; // พักวันอังคาร, ศุกร์, อาทิตย์
+        }
+        
+        let activeIdx = 0;
+        for (let i = 0; i < 7; i++) {
+            if (holdIndices.includes(i)) {
+                dailyDoses[i] = 0;
+            } else {
+                dailyDoses[i] = activeCombo[activeIdx++];
+            }
+        }
+
+        let perDay3 = Array(7).fill(0);
+        let perDay2 = Array(7).fill(0);
+        let total3Pills = 0;
+        let total2Pills = 0;
+
+        for (let i = 0; i < 7; i++) {
+            let pills = getPillsForDose(dailyDoses[i], pillType, allowHalf);
+            perDay3[i] = pills.p3;
+            perDay2[i] = pills.p2;
+            total3Pills += pills.p3;
+            total2Pills += pills.p2;
+        }
+
+        return {
+            h3: total3Pills, 
+            h2: total2Pills,
+            total: targetDose,
+            type: 'custom_hold_days',
+            perDay3: perDay3,
+            perDay2: perDay2
+        };
+    }
+
     function generatePillImage(count, pillMg){
         let html = '';
         const fullPills = Math.floor(count);
@@ -1196,7 +1325,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < 7; i++) {
             let t3 = perDay3[i];
             let t2 = perDay2[i];
-            if (!isFixedDose) {
+            if (!isFixedDose && combo.type !== 'custom_hold_days') {
                 if (combo.type === '3mg') { t3 /= 2; t2 = 0; }
                 else if (combo.type === '2mg') { t2 /= 2; t3 = 0; }
                 else if (combo.type === 'both_half') { t3 /= 2; t2 /= 2; }
@@ -1234,7 +1363,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let perDay3 = [];
         let perDay2 = [];
 
-        if (isFixedDose) {
+        if (combo.perDay3 && combo.perDay2) {
+            perDay3 = [...combo.perDay3];
+            perDay2 = [...combo.perDay2];
+        } else if (isFixedDose) {
             if (pillChoice === '3mg_fixed_1dayoff') {
                 perDay3 = distributeEvenly7Fixed(combo.h3); 
                 perDay2 = Array(7).fill(0);
@@ -1290,7 +1422,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 let t3 = perDay3[i]; 
                 let t2 = perDay2[i]; 
 
-                if (!isFixedDose) {
+                if (!isFixedDose && combo.type !== 'custom_hold_days') {
                     if (combo.type === '3mg') { t3 /= 2; t2 = 0; }
                     else if (combo.type === '2mg') { t2 /= 2; t3 = 0; }
                     else if (combo.type === 'both_half') { t3 /= 2; t2 /= 2; }
@@ -1350,22 +1482,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     let t3 = perDay3[i];
                     let t2 = perDay2[i];
                     
-                    if (!isFixedDose) {
-                        if (combo.type === '3mg') { t3 /= 2; t2 = 0; }
-                        else if (combo.type === '2mg') { t2 /= 2; t3 = 0; }
-                        else if (combo.type === 'both_half') { t3 /= 2; t2 /= 2; }
+                    if (!isFixedDose && combo.type !== 'custom_hold_days') {
+                        if (combo.type === '3mg') { t3 = t3 / 2; t2 = 0; }
+                        else if (combo.type === '2mg') { t2 = t2 / 2; t3 = 0; }
+                        else if (combo.type === 'both_half') { t3 = t3 / 2; t2 = t2 / 2; }
                     }
 
                     const mg = t3*3 + t2*2;
                     let value = '';
                     if (pillType.type === 3) {
-                        if (isFixedDose && t3 === 0) {
+                        if ((isFixedDose || combo.type === 'custom_hold_days') && t3 === 0) {
                             value = '<span style="color: var(--main-pink); font-weight: 700;">หยุด</span>';
                         } else {
                             value = t3 % 1 === 0 ? t3 : t3.toFixed(1);
                         }
                     } else if (pillType.type === 2) {
-                        if (isFixedDose && t2 === 0) {
+                        if ((isFixedDose || combo.type === 'custom_hold_days') && t2 === 0) {
                             value = '<span style="color: var(--main-pink); font-weight: 700;">หยุด</span>';
                         } else {
                             value = t2 % 1 === 0 ? t2 : t2.toFixed(1);
@@ -1443,23 +1575,49 @@ document.addEventListener('DOMContentLoaded', function() {
            return;
         }
         
-        let adj = { minPct:0, maxPct:0, avgPct:0, note:'' };
+        let adj = {
+            minPct:0,
+            maxPct:0,
+            avgPct:0,
+            note:''
+        };
 
         if(targetRange === '2-3'){
             if(inr < 1.5){
-                adj.minPct=0.10; adj.maxPct=0.20; adj.avgPct=0.15; adj.note='เพิ่มขนาดยารายสัปดาห์ 10–20%';
+                adj.minPct=0.10;
+                adj.maxPct=0.20;
+                adj.avgPct=0.15;
+                adj.note='เพิ่มขนาดยารายสัปดาห์ 10–20%';
             } else if(inr>=1.5 && inr<2.0){
-                adj.minPct=0.05; adj.maxPct=0.10; adj.avgPct=0.075; adj.note='เพิ่ม 5–10% หรือพิจารณาไม่ปรับ แต่ติดตาม INR บ่อยขึ้น';
+                adj.minPct=0.05;
+                adj.maxPct=0.10;
+                adj.avgPct=0.075;
+                adj.note='เพิ่ม 5–10% หรือพิจารณาไม่ปรับ แต่ติดตาม INR บ่อยขึ้น';
             } else if(inr>=2.0 && inr<3.1){
-                adj.minPct=0; adj.maxPct=0; adj.avgPct=0; adj.note='ไม่ต้องปรับยา';
+                adj.minPct=0;
+                adj.maxPct=0;
+                adj.avgPct=0;
+                adj.note='ไม่ต้องปรับยา';
             } else if(inr>=3.1 && inr<4.0){
-                adj.minPct=-0.10; adj.maxPct=-0.05; adj.avgPct=-0.075; adj.note='ลดขนาดยารายสัปดาห์ 5–10%';
+                adj.minPct=-0.10;
+                adj.maxPct=-0.05;
+                adj.avgPct=-0.075;
+                adj.note='ลดขนาดยารายสัปดาห์ 5–10%';
             } else if(inr>=4.0 && inr<5.0){
-                adj.minPct=-0.10; adj.maxPct=-0.10; adj.avgPct=-0.10; adj.note='หยุดยา 1 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 10%';
+                adj.minPct=-0.10;
+                adj.maxPct=-0.10;
+                adj.avgPct=-0.10;
+                adj.note='หยุดยา 1 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 10%';
             } else if(inr>=5.0 && inr<9.0){
-                adj.minPct=-0.20; adj.maxPct=-0.20; adj.avgPct=-0.20; adj.note='หยุดยา 2 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 20% — พิจารณาให้ Vitamin K₁รับประทาน';
+                adj.minPct=-0.20;
+                adj.maxPct=-0.20;
+                adj.avgPct=-0.20;
+                adj.note='หยุดยา 2 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 20% — พิจารณาให้ Vitamin K₁รับประทาน';
             } else if(inr>=9.0){
-                adj.minPct=null; adj.maxPct=null; adj.avgPct=null; adj.note='INR > 9 : ให้ Vitamin K1รับประทาน 2.5-5mg และติดตาม INR อย่างใกล้ชิด';
+                adj.minPct=null;
+                adj.maxPct=null;
+                adj.avgPct=null;
+                adj.note='INR > 9 : ให้ Vitamin K1รับประทาน 2.5-5mg และติดตาม INR อย่างใกล้ชิด';
             }
         }
 
@@ -1470,10 +1628,18 @@ document.addEventListener('DOMContentLoaded', function() {
            const min = weeklyDose*(1+adj.minPct);
            const max = weeklyDose*(1+adj.maxPct);
            const avg = weeklyDose*(1+adj.avgPct);
-           newRange = { minCalc: parseFloat(min.toFixed(2)), maxCalc: parseFloat(max.toFixed(2)), avgCalc: parseFloat(avg.toFixed(2)) };
+           
+           newRange = {
+             minCalc: parseFloat(min.toFixed(2)),
+             maxCalc: parseFloat(max.toFixed(2)),
+             avgCalc: parseFloat(avg.toFixed(2)),
+           };
         }
         
-        let html = `<div class="card"><p><strong>คำแนะนำ:</strong> INR = ${inr.toFixed(2)} <span style="color:#E53935;font-weight:700;">➜</span> ${adj.note}</p>`;
+        let html = `
+            <div class="card">
+                <p><strong>คำแนะนำ:</strong> INR = ${inr.toFixed(2)} <span style="color:#E53935;font-weight:700;">➜</span> ${adj.note}</p>
+        `;
 
         if(newRange.note) {
             html += `<p class="note">${newRange.note}</p>`;
@@ -1503,13 +1669,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 const manualTargetVal = parseFloat(document.getElementById('manualTargetDoseTab1').value) || 0;
                 if (manualTargetVal > 0) {
                     let mSteps = [manualTargetVal - 0.5, manualTargetVal, manualTargetVal + 0.5];
-                    mSteps.forEach(v => { if (v > 0) targets.push({ val: roundTwoDecimals(v) }); });
+                    mSteps.forEach(v => {
+                        if (v > 0) {
+                            targets.push({ val: roundTwoDecimals(v) });
+                        }
+                    });
                 }
             } else {
                 let startStep = Math.floor(newRange.minCalc * 2) / 2 - 0.5;
                 let endStep = Math.ceil(newRange.maxCalc * 2) / 2 + 0.5;
                 if (startStep < 0) startStep = 0;
-                for (let v = startStep; v <= endStep; v += 0.5) { targets.push({ val: roundTwoDecimals(v) }); }
+                
+                for (let v = startStep; v <= endStep; v += 0.5) {
+                    const checkVal = roundTwoDecimals(v);
+                    targets.push({ val: checkVal });
+                }
             }
             
             const numDays = parseInt(daysInput.value) || 7;
@@ -1517,57 +1691,95 @@ document.addEventListener('DOMContentLoaded', function() {
             let uniquePlansIndex = 0;
            
             targets.forEach((t)=>{
-                let best; let isFixedDose = false;
+                let best;
+                let isFixedDose = false;
+                
                 if (pillChoice === '3mg_fixed_1dayoff') {
-                    const numPills = Math.round(t.val / 3); best = { h3: numPills, h2: 0, total: numPills * 3, type: '3mg_fixed' }; isFixedDose = true;
+                    const numPills = Math.round(t.val / 3); 
+                    best = { h3: numPills, h2: 0, total: numPills * 3, type: '3mg_fixed' };
+                    isFixedDose = true;
                 } else if (pillChoice === '2mg_fixed_1dayoff') {
-                    const numPills = Math.round(t.val / 2); best = { h3: 0, h2: numPills, total: numPills * 2, type: '2mg_fixed' }; isFixedDose = true;
+                    const numPills = Math.round(t.val / 2); 
+                    best = { h3: 0, h2: numPills, total: numPills * 2, type: '2mg_fixed' };
+                    isFixedDose = true;
                 } else if(pillChoice==='3'){
-                    const h3=Math.round(t.val/1.5); best={h3:h3,h2:0,total:h3*1.5,type:'3mg'}; 
+                    const h3=Math.round(t.val/1.5); 
+                    best={h3:h3,h2:0,total:h3*1.5,type:'3mg'}; 
                 } else if(pillChoice==='2'){
-                    const h2=Math.round(t.val/1.0); best={h3:0,h2:h2,total:h2*1.0,type:'2mg'}; 
+                    const h2=Math.round(t.val/1.0); 
+                    best={h3:0,h2:h2,total:h2*1.0,type:'2mg'}; 
                 } else if(pillChoice==='both_half'){
                     best=findBestComboHalf(t.val);
                 } else {
-                    best=findBestCombo(t.val); best.type='5mg';
+                    best=findBestCombo(t.val);
+                    best.type='5mg';
                 }
 
                 const roundedActualTotal = roundTwoDecimals(best.total);
-                if (seenDoses.has(roundedActualTotal)) return; 
+                
+                if (seenDoses.has(roundedActualTotal)) {
+                    return; 
+                }
                 seenDoses.add(roundedActualTotal);
 
                 const actualInRange = (roundedActualTotal >= newRange.minCalc - 0.01 && roundedActualTotal <= newRange.maxCalc + 0.01);
                 
                 let total3 = 0, total2 = 0;
-                let perDay3 = []; let perDay2 = [];
+                let perDay3 = [];
+                let perDay2 = [];
                 
                 if (isFixedDose) {
-                    if (pillChoice === '3mg_fixed_1dayoff') { perDay3 = distributeEvenly7Fixed(best.h3); perDay2 = Array(7).fill(0); }
-                    else if (pillChoice === '2mg_fixed_1dayoff') { perDay2 = distributeEvenly7Fixed(best.h2); perDay3 = Array(7).fill(0); }
+                    if (pillChoice === '3mg_fixed_1dayoff') {
+                        perDay3 = distributeEvenly7Fixed(best.h3); 
+                        perDay2 = Array(7).fill(0);
+                    } else if (pillChoice === '2mg_fixed_1dayoff') {
+                        perDay2 = distributeEvenly7Fixed(best.h2); 
+                        perDay3 = Array(7).fill(0);
+                    }
                 } else if (best.type === 'both_half') {
-                    perDay3 = Array(7).fill(0); perDay2 = Array(7).fill(0);
-                    for (let i = 0; i < best.h3; i++) perDay3[i % 7]++;
-                    for (let i = 0; i < best.h2; i++) perDay2[(best.h3 + i) % 7]++;
+                    perDay3 = Array(7).fill(0);
+                    perDay2 = Array(7).fill(0);
+                    for (let i = 0; i < best.h3; i++) {
+                        perDay3[i % 7]++;
+                    }
+                    for (let i = 0; i < best.h2; i++) {
+                        perDay2[(best.h3 + i) % 7]++; 
+                    }
                 } else {
-                    perDay3 = distributeEvenly7(best.h3); perDay2 = distributeEvenly7(best.h2);
+                    perDay3 = distributeEvenly7(best.h3);
+                    perDay2 = distributeEvenly7(best.h2);
                 }
 
                 for(let i=0; i<numDays; i++){
-                    if(isFixedDose) { total3 += perDay3[i % 7]; total2 += perDay2[i % 7]; }
-                    else if(best.type==='3mg') { total3 += perDay3[i % 7]/2; }
-                    else if(best.type==='2mg') { total2 += perDay2[i % 7]/2; }
-                    else if(best.type==='both_half') { total3 += perDay3[i % 7]/2; total2 += perDay2[i % 7]/2; }
-                    else if(best.type==='5mg') { total3 += perDay3[i % 7]; total2 += perDay2[i % 7]; }
+                    if(isFixedDose) {
+                        total3 += perDay3[i % 7];
+                        total2 += perDay2[i % 7];
+                    } else if(best.type==='3mg'){
+                        total3 += perDay3[i % 7]/2; 
+                    } else if(best.type==='2mg'){
+                        total2 += perDay2[i % 7]/2; 
+                    } else if(best.type==='both_half'){
+                        total3 += perDay3[i % 7]/2; 
+                        total2 += perDay2[i % 7]/2; 
+                    } else if(best.type==='5mg'){
+                        total3 += perDay3[i % 7]; 
+                        total2 += perDay2[i % 7]; 
+                    }
                 }
-                total3 = Math.ceil(total3); total2 = Math.ceil(total2);
+                  
+                total3 = Math.ceil(total3);
+                total2 = Math.ceil(total2);
 
                 let planHTML = buildPlanHTML(`${roundedActualTotal.toFixed(2)} mg`, best, weeklyDose, document.querySelector('input[name="displayMode"]:checked').value, total3, total2, (uniquePlansIndex % 6) + 1, null, true, actualInRange);
                 plansDiv.innerHTML += planHTML;
                 uniquePlansIndex++;
             });
-            tables.hidden = false; tables.style.display = 'block';
+            
+            tables.hidden = false;
+            tables.style.display = 'block';
         } else {
-           plansDiv.innerHTML=`<div class="note">${newRange.note}</div>`; tables.style.display = 'block';
+           plansDiv.innerHTML=`<div class="note">${newRange.note}</div>`;
+           tables.style.display = 'block';
         }
     }
 
@@ -1595,8 +1807,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="note" style="background:#FFEBEE; border-left:6px solid #D32F2F; color:#B71C1C;">
                         ให้ Vitamin K1 และพิจารณาการรักษาตามแนวทาง
                     </div>
-                </div>`;
-            otherPlansOutput.innerHTML = ''; stepByStepOutput.innerHTML = '';
+                </div>
+            `;
+            otherPlansOutput.innerHTML = '';
+            stepByStepOutput.innerHTML = '';
             if (lblTargetDose) lblTargetDose.textContent = '-';
             if (badge) badge.innerHTML = `ขนาดยาเป้าหมาย: - | เปลี่ยนแปลง: -`;
             return;
@@ -1610,7 +1824,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (lblTargetDose) lblTargetDose.textContent = '-';
             if (badge) badge.innerHTML = `ขนาดยาเป้าหมาย: - | เปลี่ยนแปลง: -`;
             bestPlanOutput.innerHTML = '<div class="note" style="background:#FFF9C4; color:#5D4037;">⚠️ กรุณาระบุขนาดยา ขนาดยาเป้าหมาย และวันนัดในกล่องควบคุมด้านบน</div>';
-            otherPlansOutput.innerHTML = ''; stepByStepOutput.innerHTML = '';
+            otherPlansOutput.innerHTML = '';
+            stepByStepOutput.innerHTML = '';
             return;
         }
 
@@ -1626,127 +1841,211 @@ document.addEventListener('DOMContentLoaded', function() {
                                (${diffPct >= 0 ? '+' : ''}${diffPct.toFixed(2)}%)</strong>`;
         }
 
-        // รายการแผนการคำนวณแยกตามความต้องการครบถ้วนทุกกรณี (8 เคส)
+        // เริ่มต้นด้วย 6 แผนการรักษามาตรฐานทานยาทุกวันไม่มีวันหยุดยา
         const manualPlans = [
             {
-                title: 'การใช้ทั้ง 2 mg และ 3 mg แบบหักแบ่งครึ่งเม็ดได้ (แนะกินทุกวันสม่ำเสมอ)',
+                title: 'ใช้ผสมทั้งเม็ด 2 mg และ 3 mg (หักแบ่งครึ่งได้)',
                 best: findBestComboHalf(targetDose),
                 isFixedDose: false,
                 pillChoiceVal: 'both_half'
             },
             {
-                title: 'การใช้ทั้ง 2 mg และ 3 mg แบบกินยาเต็มเม็ดทุกวัน / แบบมีวันหยุดได้',
+                title: 'ใช้ผสมทั้งเม็ด 2 mg และ 3 mg (กินยาเต็มเม็ดทุกวัน)',
                 best: findBestCombo(targetDose),
                 isFixedDose: false,
                 pillChoiceVal: 'both'
             },
             {
-                title: 'การใช้ทั้ง 2 mg เท่านั้น แบบหักแบ่งครึ่งเม็ดได้',
-                best: { h3: 0, h2: Math.round(targetDose / 1.0), total: Math.round(targetDose / 1.0) * 1.0, type: '2mg' },
-                isFixedDose: false,
-                pillChoiceVal: '2'
-            },
-            {
-                title: 'การใช้ทั้ง 2 mg เท่านั้น แบบกินยาเต็มเม็ด / แบบมีวันหยุดได้',
-                best: { h3: 0, h2: Math.round(targetDose / 2.0), total: Math.round(targetDose / 2.0) * 2, type: '2mg_fixed' },
-                isFixedDose: true,
-                pillChoiceVal: '2mg_fixed_1dayoff'
-            },
-            {
-                title: 'การใช้ทั้ง 3 mg เท่านั้น แบบหักแบ่งครึ่งเม็ดได้',
+                title: 'ใช้เม็ด 3 mg เท่านั้น (หักแบ่งครึ่งได้)',
                 best: { h3: Math.round(targetDose / 1.5), h2: 0, total: Math.round(targetDose / 1.5) * 1.5, type: '3mg' },
                 isFixedDose: false,
                 pillChoiceVal: '3'
             },
             {
-                title: 'การใช้ทั้ง 3 mg เท่านั้น แบบกินยาเต็มเม็ด / แบบมีวันหยุดได้',
+                title: 'ใช้เม็ด 2 mg เท่านั้น (หักแบ่งครึ่งได้)',
+                best: { h3: 0, h2: Math.round(targetDose / 1.0), total: Math.round(targetDose / 1.0) * 1.0, type: '2mg' },
+                isFixedDose: false,
+                pillChoiceVal: '2'
+            },
+            {
+                title: 'เม็ด 3 mg เต็มเม็ดเท่านั้น (ไม่มีแบ่งครึ่ง แต่อาจมีวันหยุดได้)',
                 best: { h3: Math.round(targetDose / 3.0), h2: 0, total: Math.round(targetDose / 3.0) * 3, type: '3mg_fixed' },
                 isFixedDose: true,
                 pillChoiceVal: '3mg_fixed_1dayoff'
             },
             {
-                title: 'การใช้เฉพาะยา 2 mg เท่านั้น ทานขนาดเท่ากันเป๊ะทุกวัน (Strict 7 Days Constant)',
-                best: { h3: 0, h2: (Math.round((targetDose / 7) / 1.0) * 1.0) * 14, total: (Math.round((targetDose / 7) / 1.0) * 1.0) * 7, type: '2mg' },
-                isFixedDose: false,
-                pillChoiceVal: '2'
-            },
-            {
-                title: 'การใช้เฉพาะยา 3 mg เท่านั้น ทานขนาดเท่ากันเป๊ะทุกวัน (Strict 7 Days Constant)',
-                best: { h3: (Math.round((targetDose / 7) / 1.5) * 1.5) * 14, h2: 0, total: (Math.round((targetDose / 7) / 1.5) * 1.5) * 7, type: '3mg' },
-                isFixedDose: false,
-                pillChoiceVal: '3'
+                title: 'เม็ด 2 mg เต็มเม็ดเท่านั้น (ไม่มีแบ่งครึ่ง แต่อาจมีวันหยุดได้)',
+                best: { h3: 0, h2: Math.round(targetDose / 2.0), total: Math.round(targetDose / 2.0) * 2, type: '2mg_fixed' },
+                isFixedDose: true,
+                pillChoiceVal: '2mg_fixed_1dayoff'
             }
         ];
 
-        bestPlanOutput.innerHTML = ''; otherPlansOutput.innerHTML = ''; stepByStepOutput.innerHTML = '';
+        // 🌟 ใหม่: ค้นหาและคำนวณทางเลือกแผนการกินยาที่มี วันหยุดยา 1 วัน, 2 วัน และ 3 วัน 🌟
+        const holdDaysOptions = [1, 2, 3];
+        holdDaysOptions.forEach(hd => {
+            // 1. แผนสลับขนาด 2 และ 3 mg (แบ่งครึ่งได้) + มีวันหยุด hd วัน
+            let allowedSetA = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0];
+            let activeComboA = findBestDoseDistribution(targetDose, 7 - hd, allowedSetA);
+            if (activeComboA) {
+                let planCombo = buildHoldDaysCombo(activeComboA, hd, 'both', true, targetDose);
+                manualPlans.push({
+                    title: `ใช้ผสมทั้งเม็ด 2 mg และ 3 mg (หักแบ่งครึ่งได้) [มีวันหยุดยา ${hd} วัน]`,
+                    best: planCombo,
+                    isFixedDose: false,
+                    pillChoiceVal: 'both_half'
+                });
+            }
+
+            // 2. แผนสลับขนาด 2 และ 3 mg (เม็ดเต็ม) + มีวันหยุด hd วัน
+            let allowedSetB = [2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0];
+            let activeComboB = findBestDoseDistribution(targetDose, 7 - hd, allowedSetB);
+            if (activeComboB) {
+                let planCombo = buildHoldDaysCombo(activeComboB, hd, 'both', false, targetDose);
+                manualPlans.push({
+                    title: `ใช้ผสมทั้งเม็ด 2 mg และ 3 mg (เม็ดเต็ม) [มีวันหยุดยา ${hd} วัน]`,
+                    best: planCombo,
+                    isFixedDose: false,
+                    pillChoiceVal: 'both'
+                });
+            }
+
+            // 3. ใช้เม็ด 2 mg เท่านั้น (แบ่งครึ่งได้) + มีวันหยุด hd วัน
+            let allowedSetC = [1.0, 2.0, 3.0, 4.0, 5.0];
+            let activeComboC = findBestDoseDistribution(targetDose, 7 - hd, allowedSetC);
+            if (activeComboC) {
+                let planCombo = buildHoldDaysCombo(activeComboC, hd, '2mg_only', true, targetDose);
+                manualPlans.push({
+                    title: `ใช้เฉพาะยา 2 mg (หักแบ่งครึ่งได้) [มีวันหยุดยา ${hd} วัน]`,
+                    best: planCombo,
+                    isFixedDose: false,
+                    pillChoiceVal: '2'
+                });
+            }
+
+            // 4. ใช้เม็ด 3 mg เท่านั้น (แบ่งครึ่งได้) + มีวันหยุด hd วัน
+            let allowedSetD = [1.5, 3.0, 4.5, 6.0];
+            let activeComboD = findBestDoseDistribution(targetDose, 7 - hd, allowedSetD);
+            if (activeComboD) {
+                let planCombo = buildHoldDaysCombo(activeComboD, hd, '3mg_only', true, targetDose);
+                manualPlans.push({
+                    title: `ใช้เฉพาะยา 3 mg (หักแบ่งครึ่งได้) [มีวันหยุดยา ${hd} วัน]`,
+                    best: planCombo,
+                    isFixedDose: false,
+                    pillChoiceVal: '3'
+                });
+            }
+        });
+
+        bestPlanOutput.innerHTML = '';
+        otherPlansOutput.innerHTML = '';
+        stepByStepOutput.innerHTML = '';
+
         let evaluatedPlans = [];
 
         manualPlans.forEach((plan, index) => {
             let total3 = 0, total2 = 0;
-            let perDay3 = []; let perDay2 = [];
+            let perDay3 = [];
+            let perDay2 = [];
 
-            if (plan.isFixedDose) {
-                if (plan.pillChoiceVal === '3mg_fixed_1dayoff') { perDay3 = distributeEvenly7Fixed(plan.best.h3); perDay2 = Array(7).fill(0); }
-                else if (plan.pillChoiceVal === '2mg_fixed_1dayoff') { perDay2 = distributeEvenly7Fixed(plan.best.h2); perDay3 = Array(7).fill(0); }
+            if (plan.best.type === 'custom_hold_days') {
+                perDay3 = [...plan.best.perDay3];
+                perDay2 = [...plan.best.perDay2];
+            } else if (plan.isFixedDose) {
+                if (plan.pillChoiceVal === '3mg_fixed_1dayoff') {
+                    perDay3 = distributeEvenly7Fixed(plan.best.h3);
+                    perDay2 = Array(7).fill(0);
+                } else if (plan.pillChoiceVal === '2mg_fixed_1dayoff') {
+                    perDay2 = distributeEvenly7Fixed(plan.best.h2);
+                    perDay3 = Array(7).fill(0);
+                }
             } else if (plan.best.type === 'both_half') {
-                perDay3 = Array(7).fill(0); perDay2 = Array(7).fill(0);
-                for (let i = 0; i < plan.best.h3; i++) perDay3[i % 7]++;
-                for (let i = 0; i < plan.best.h2; i++) perDay2[(plan.best.h3 + i) % 7]++;
+                perDay3 = Array(7).fill(0);
+                perDay2 = Array(7).fill(0);
+                for (let i = 0; i < plan.best.h3; i++) {
+                    perDay3[i % 7]++;
+                }
+                for (let i = 0; i < plan.best.h2; i++) {
+                    perDay2[(plan.best.h3 + i) % 7]++;
+                }
             } else {
-                perDay3 = distributeEvenly7(plan.best.h3); perDay2 = distributeEvenly7(plan.best.h2);
+                perDay3 = distributeEvenly7(plan.best.h3);
+                perDay2 = distributeEvenly7(plan.best.h2);
             }
 
-            let holdDaysCount = 0; let hasSplits = false; let mixedDays = 0;
+            let holdDaysCount = 0;
+            let hasSplits = false;
+            let mixedDays = 0;
 
             for (let i = 0; i < 7; i++) {
-                let t3 = perDay3[i]; let t2 = perDay2[i];
-                if (!plan.isFixedDose) {
+                let t3 = perDay3[i];
+                let t2 = perDay2[i];
+                if (!plan.isFixedDose && plan.best.type !== 'custom_hold_days') {
                     if (plan.best.type === '3mg') { t3 /= 2; t2 = 0; }
                     else if (plan.best.type === '2mg') { t2 /= 2; t3 = 0; }
                     else if (plan.best.type === 'both_half') { t3 /= 2; t2 /= 2; }
                 }
                 const dailyMg = t3 * 3 + t2 * 2;
-                if (dailyMg === 0) holdDaysCount++;
-                if (t3 % 1 !== 0 || t2 % 1 !== 0) hasSplits = true;
-                if (t3 > 0 && t2 > 0) mixedDays++;
+                if (dailyMg === 0) {
+                    holdDaysCount++;
+                }
+                if (t3 % 1 !== 0 || t2 % 1 !== 0) {
+                    hasSplits = true;
+                }
+                if (t3 > 0 && t2 > 0) {
+                    mixedDays++;
+                }
             }
 
             for (let i = 0; i < numDays; i++) {
-                if (plan.isFixedDose) { total3 += perDay3[i % 7]; total2 += perDay2[i % 7]; }
-                else if (plan.best.type === '3mg') { total3 += perDay3[i % 7] / 2; }
-                else if (plan.best.type === '2mg') { total2 += perDay2[i % 7] / 2; }
-                else if (plan.best.type === 'both_half') { total3 += perDay3[i % 7] / 2; total2 += perDay2[i % 7] / 2; }
-                else if (plan.best.type === '5mg') { total3 += perDay3[i % 7]; total2 += perDay2[i % 7]; }
+                if (plan.isFixedDose || plan.best.type === 'custom_hold_days') {
+                    total3 += perDay3[i % 7];
+                    total2 += perDay2[i % 7];
+                } else if (plan.best.type === '3mg') {
+                    total3 += perDay3[i % 7] / 2;
+                } else if (plan.best.type === '2mg') {
+                    total2 += perDay2[i % 7] / 2;
+                } else if (plan.best.type === 'both_half') {
+                    total3 += perDay3[i % 7] / 2;
+                    total2 += perDay2[i % 7] / 2;
+                } else if (plan.best.type === '5mg') {
+                    total3 += perDay3[i % 7];
+                    total2 += perDay2[i % 7];
+                }
             }
 
-            total3 = Math.ceil(total3); total2 = Math.ceil(total2);
+            total3 = Math.ceil(total3);
+            total2 = Math.ceil(total2);
+
             let roundedActualTotal = roundTwoDecimals(plan.best.total);
-            let planHTML = buildPlanHTML(plan.title, plan.best, weeklyDose, displayMode, total3, total2, index + 1, plan.pillChoiceVal, false, false);
+            let planHTML = buildPlanHTML(plan.title, plan.best, weeklyDose, displayMode, total3, total2, (index % 6) + 1, plan.pillChoiceVal, false, false);
             
             // ตรรกะให้คะแนนเพื่อหยิบยกเอาแผนทานยาทุกวันไม่มีวันหยุดยาขึ้นหน้าแรกก่อน
             let sortScore = holdDaysCount * 20000; 
             if (hasSplits) sortScore += 10;     
             if (mixedDays > 0) sortScore += 5;  
-            // หากความต่าง mg จากเป้าหมายมาก ให้ลำดับถอยลงไป
+            // หากความต่างจากเป้าหมายมาก ให้ลงสถิตต่ำลงไป
             sortScore += Math.abs(roundedActualTotal - targetDose) * 50000;
 
             evaluatedPlans.push({
-                html: planHTML, sortScore: sortScore, holdDays: holdDaysCount,
-                pillChoiceVal: plan.pillChoiceVal, combo: plan.best, actualTotal: roundedActualTotal
+                html: planHTML,
+                sortScore: sortScore,
+                holdDays: holdDaysCount,
+                pillChoiceVal: plan.pillChoiceVal,
+                combo: plan.best,
+                actualTotal: roundedActualTotal
             });
         });
 
         evaluatedPlans.sort((a, b) => a.sortScore - b.sortScore);
 
-        // นำอันสถิตดีที่สุดแสดงหน้าหลัก
-        bestPlanOutput.innerHTML = evaluatedPlans[0].html;
+        const bestPlanEvaluated = evaluatedPlans[0]; 
+        bestPlanOutput.innerHTML = bestPlanEvaluated.html;
 
-        // นำแผนอื่น ๆ ย่อยทั้งหมดลงกล่องซ่อนเปิดใช้งานภายหลัง
         for (let i = 1; i < evaluatedPlans.length; i++) {
             otherPlansOutput.innerHTML += evaluatedPlans[i].html;
         }
 
-        // ส่วนตารางเชิงรุกก้าวละเอียดทีละ 0.5 mg รอบช่วงแนะนำด้านบน
         const inrVal = parseFloat(document.getElementById('manualInrInput').value);
         if (!isNaN(inrVal) && inrVal > 0) {
             let adjManual = { minPct: 0, maxPct: 0 };
@@ -1766,31 +2065,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 let endStep = Math.ceil(maxCalcManual * 2) / 2 + 0.5;
                 if (startStep < 0) startStep = 0;
 
-                let seenStepDoses = new Set(); let stepIdx = 0;
+                let seenStepDoses = new Set();
+                let stepIdx = 0;
 
                 for (let v = startStep; v <= endStep; v += 0.5) {
                     const stepVal = roundTwoDecimals(v);
+                    
                     let stepCombo = findBestComboHalf(stepVal);
                     const roundedActualStepTotal = roundTwoDecimals(stepCombo.total);
 
-                    if (seenStepDoses.has(roundedActualStepTotal)) continue;
+                    if (seenStepDoses.has(roundedActualStepTotal)) {
+                        continue;
+                    }
                     seenStepDoses.add(roundedActualStepTotal);
 
                     const actualInRange = (roundedActualStepTotal >= minCalcManual - 0.01 && roundedActualStepTotal <= maxCalcManual + 0.01);
                     
                     let total3 = 0, total2 = 0;
-                    let perDay3 = Array(7).fill(0); let perDay2 = Array(7).fill(0);
+                    let perDay3 = Array(7).fill(0);
+                    let perDay2 = Array(7).fill(0);
                     for (let i = 0; i < stepCombo.h3; i++) { perDay3[i % 7]++; }
                     for (let i = 0; i < stepCombo.h2; i++) { perDay2[(stepCombo.h3 + i) % 7]++; }
 
                     for (let i = 0; i < numDays; i++) {
-                        total3 += perDay3[i % 7] / 2; total2 += perDay2[i % 7] / 2;
+                        total3 += perDay3[i % 7] / 2;
+                        total2 += perDay2[i % 7] / 2;
                     }
-                    total3 = Math.ceil(total3); total2 = Math.ceil(total2);
+                    total3 = Math.ceil(total3);
+                    total2 = Math.ceil(total2);
 
                     let stepPlanHTML = buildPlanHTML(
                         `${roundedActualStepTotal.toFixed(2)} mg (แบบหักแบ่งครึ่งผสม 2 และ 3 mg)`,
-                        stepCombo, weeklyDose, displayMode, total3, total2, (stepIdx % 6) + 1, 'both_half', true, actualInRange
+                        stepCombo,
+                        weeklyDose,
+                        displayMode,
+                        total3,
+                        total2,
+                        (stepIdx % 6) + 1,
+                        'both_half',
+                        true, 
+                        actualInRange
                     );
                     stepByStepOutput.innerHTML += stepPlanHTML;
                     stepIdx++;
@@ -1819,15 +2133,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
         btnDecreaseTab1.addEventListener('click', function() {
             let val = parseFloat(manualTargetDoseTab1.value) || 0;
-            val = Math.max(0, val - 0.5); manualTargetDoseTab1.value = val.toFixed(1); calculate();
+            val = Math.max(0, val - 0.5);
+            manualTargetDoseTab1.value = val.toFixed(1);
+            calculate();
         });
 
         btnIncreaseTab1.addEventListener('click', function() {
             let val = parseFloat(manualTargetDoseTab1.value) || 0;
-            val = val + 0.5; manualTargetDoseTab1.value = val.toFixed(1); calculate();
+            val = val + 0.5;
+            manualTargetDoseTab1.value = val.toFixed(1);
+            calculate();
         });
 
-        manualTargetDoseTab1.addEventListener('input', calculate);
+        manualTargetDoseTab1.addEventListener('input', function() {
+            calculate();
+        });
     }
 
     const btnDecrease = document.getElementById('btnDecreaseManual');
@@ -1837,15 +2157,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnDecrease && btnIncrease && manualTargetDoseVal) {
         btnDecrease.addEventListener('click', function() {
             let val = parseFloat(manualTargetDoseVal.value) || 0;
-            val = Math.max(0, val - 0.5); manualTargetDoseVal.value = val.toFixed(1); calculateManual();
+            val = Math.max(0, val - 0.5);
+            manualTargetDoseVal.value = val.toFixed(1);
+            calculateManual();
         });
 
         btnIncrease.addEventListener('click', function() {
             let val = parseFloat(manualTargetDoseVal.value) || 0;
-            val = val + 0.5; manualTargetDoseVal.value = val.toFixed(1); calculateManual();
+            val = val + 0.5;
+            manualTargetDoseVal.value = val.toFixed(1);
+            calculateManual();
         });
 
-        manualTargetDoseVal.addEventListener('input', calculateManual);
+        manualTargetDoseVal.addEventListener('input', function() {
+            calculateManual();
+        });
     }
 
     const btnToggleOtherPlans = document.getElementById('btnToggleOtherPlans');
@@ -1865,7 +2191,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('inr').addEventListener('input', function(e){
         const inr = parseFloat(e.target.value);
-        highlightGuidelineByINR(inr, false); calculate();
+        highlightGuidelineByINR(inr, false);
+        calculate();
     });
     document.getElementById('weeklyDose').addEventListener('input', calculate);
     document.getElementById('days').addEventListener('input', calculate);
@@ -1873,33 +2200,55 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('input[name="targetRange"]').forEach(el => {
         el.addEventListener('change', () => {
             const inr = parseFloat(document.getElementById('inr').value);
-            highlightGuidelineByINR(inr, false); calculate();
+            highlightGuidelineByINR(inr, false);
+            calculate();
         });
     });
     document.querySelectorAll('input[name="pills"]').forEach(el => el.addEventListener('change', calculate));
     document.querySelectorAll('input[name="displayMode"]').forEach(el => el.addEventListener('change', calculate));
     document.querySelectorAll('input[name="bleed"]').forEach(el => {
         el.addEventListener('change', () => {
-            calculate(); const inr = parseFloat(document.getElementById('inr').value);
+            calculate();
+            const inr = parseFloat(document.getElementById('inr').value);
             highlightGuidelineByINR(inr, false);
         });
     });
 
     document.getElementById('manualInrInput').addEventListener('input', function(e) {
         const inr = parseFloat(e.target.value);
-        highlightGuidelineByINR(inr, true); updateManualGuideline(); calculateManual();
+        highlightGuidelineByINR(inr, true);
+        updateManualGuideline();
+        calculateManual();
     });
     document.getElementById('manualWeeklyDoseInput').addEventListener('input', () => {
-        updateManualGuideline(); calculateManual();
+        updateManualGuideline();
+        calculateManual();
     });
     document.getElementById('manualDaysInput').addEventListener('input', calculateManual);
     document.querySelectorAll('input[name="manualDisplayMode"]').forEach(el => el.addEventListener('change', calculateManual));
+    
     document.querySelectorAll('input[name="manualBleed"]').forEach(el => {
         el.addEventListener('change', () => {
-            updateManualGuideline(); calculateManual();
+            updateManualGuideline();
+            calculateManual();
             const inr = parseFloat(document.getElementById('manualInrInput').value);
             highlightGuidelineByINR(inr, true);
         });
+    });
+
+    const observer = new MutationObserver(() => {
+        calculateComparison(false);
+    });
+    document.querySelectorAll('.dose-input-group').forEach(group => {
+        observer.observe(group, {
+            childList: true,
+            subtree: true
+        });
+    });
+    document.querySelector('.standalone-calculator').addEventListener('input', function(e) {
+        if (e.target.matches('input')) {
+            calculateComparison(false);
+        }
     });
 
     const btnClearGuideline = document.getElementById('btnClearGuideline');
@@ -1908,11 +2257,32 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('inr').value = '';
             document.getElementById('weeklyDose').value = '';
             document.getElementById('days').value = '';
-            if (manualToggleTab1) { manualToggleTab1.checked = false; manualSectionTab1.style.display = 'none'; manualTargetDoseTab1.value = ''; }
+            
+            if (manualToggleTab1) {
+                manualToggleTab1.checked = false;
+                manualSectionTab1.style.display = 'none';
+                manualTargetDoseTab1.value = '';
+            }
+            
+            const firstTargetRange = document.querySelector('input[name="targetRange"]');
+            if (firstTargetRange) firstTargetRange.checked = true;
+            
+            const firstPills = document.querySelector('input[name="pills"][value="3"]');
+            if (firstPills) firstPills.checked = true;
+            
+            const firstBleed = document.querySelector('input[name="bleed"][value="no"]');
+            if (firstBleed) firstBleed.checked = true;
+            
+            const firstDisplayMode = document.querySelector('input[name="displayMode"][value="number"]');
+            if (firstDisplayMode) firstDisplayMode.checked = true;
+
             document.getElementById('results').style.display = 'none';
             document.getElementById('tables').style.display = 'none';
             document.getElementById('plans').innerHTML = '';
-            document.querySelectorAll('.tab1-table .guideline-highlight-cell').forEach(el => el.classList.remove('guideline-highlight-cell'));
+
+            document.querySelectorAll('.tab1-table .guideline-highlight-cell').forEach(el => {
+                el.classList.remove('guideline-highlight-cell');
+            });
         });
     }
 
@@ -1922,45 +2292,79 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('manualInrInput').value = '';
             document.getElementById('manualWeeklyDoseInput').value = '';
             document.getElementById('manualDaysInput').value = '';
+            
             document.getElementById('manualTargetDoseValue').value = '';
+            
+            const firstManualDisplayMode = document.querySelector('input[name="manualDisplayMode"][value="number"]');
+            if (firstManualDisplayMode) firstManualDisplayMode.checked = true;
+
+            const firstManualBleed = document.querySelector('input[name="manualBleed"][value="no"]');
+            if (firstManualBleed) firstManualBleed.checked = true;
+
             document.getElementById('manualBestPlanOutput').innerHTML = '';
             document.getElementById('manualOtherPlansOutput').innerHTML = '';
             document.getElementById('manualStepByStepOutput').innerHTML = '';
             document.getElementById('lblTargetDose').textContent = '-';
             document.getElementById('manualGuidelineCard').style.display = 'none';
+            
             if (manualOtherPlansContainer) manualOtherPlansContainer.style.display = 'none';
             if (btnToggleOtherPlans) btnToggleOtherPlans.textContent = '📂 แสดงวิธีกินทางเลือกอื่นๆ';
+
             const badge = document.getElementById('manualComparisonBadge');
-            if (badge) badge.innerHTML = `ขนาดยาเป้าหมาย: - | เปลี่ยนแปลง: -`;
-            document.querySelectorAll('.tab2-table .guideline-highlight-cell').forEach(el => el.classList.remove('guideline-highlight-cell'));
+            if (badge) {
+                badge.innerHTML = `ขนาดยาเป้าหมาย: - | เปลี่ยนแปลง: -`;
+            }
+
+            document.querySelectorAll('.tab2-table .guideline-highlight-cell').forEach(el => {
+                el.classList.remove('guideline-highlight-cell');
+            });
         });
     }
 
     calculate(); 
     updateManualGuideline();
+    highlightGuidelineByINR(parseFloat(document.getElementById('inr').value), false);
+    highlightGuidelineByINR(parseFloat(document.getElementById('manualInrInput').value), true);
     calculateManual();
 });
 
 function highlightGuidelineByINR(inr, isTab2 = false) {
     const targetSelector = isTab2 ? '.tab2-table tbody tr' : '.tab1-table tbody tr';
     const rows = document.querySelectorAll(targetSelector);
-    const activeCellsSelector = isTab2 ? '.tab2-table .guideline-highlight-cell' : '.tab1-table .guideline-highlight-cell';
-    document.querySelectorAll(activeCellsSelector).forEach(el => el.classList.remove('guideline-highlight-cell'));
 
-    const bleed = isTab2 ? document.querySelector('input[name="manualBleed"]:checked')?.value : document.querySelector('input[name="bleed"]:checked')?.value;
+    const activeCellsSelector = isTab2 ? '.tab2-table .guideline-highlight-cell' : '.tab1-table .guideline-highlight-cell';
+    document.querySelectorAll(activeCellsSelector).forEach(el => {
+        el.classList.remove('guideline-highlight-cell');
+    });
+
+    const bleed = isTab2 ?
+        document.querySelector('input[name="manualBleed"]:checked')?.value :
+        document.querySelector('input[name="bleed"]:checked')?.value;
+
     if (bleed === 'yes') {
         rows[7].children[0].classList.add('guideline-highlight-cell');
-        rows[7].children[1].classList.add('guideline-highlight-cell'); return;
+        rows[7].children[1].classList.add('guideline-highlight-cell');
+        return;
     }
+
     if (isNaN(inr)) return;
+
     let targetRow = null;
-    if (inr < 1.5) targetRow = rows[0];
-    else if (inr >= 1.5 && inr < 2.0) targetRow = rows[1];
-    else if (inr >= 2.0 && inr < 3.1) targetRow = rows[2];
-    else if (inr >= 3.1 && inr < 4.0) targetRow = rows[3];
-    else if (inr >= 4.0 && inr < 5.0) targetRow = rows[4];
-    else if (inr >= 5.0 && inr < 9.0) targetRow = rows[5];
-    else if (inr >= 9.0) targetRow = rows[6];
+    if (inr < 1.5) {
+        targetRow = rows[0];
+    } else if (inr >= 1.5 && inr < 2.0) {
+        targetRow = rows[1];
+    } else if (inr >= 2.0 && inr < 3.1) {
+        targetRow = rows[2];
+    } else if (inr >= 3.1 && inr < 4.0) {
+        targetRow = rows[3];
+    } else if (inr >= 4.0 && inr < 5.0) {
+        targetRow = rows[4];
+    } else if (inr >= 5.0 && inr < 9.0) {
+        targetRow = rows[5];
+    } else if (inr >= 9.0) {
+        targetRow = rows[6];
+    }
 
     if (targetRow) {
         targetRow.children[0].classList.add('guideline-highlight-cell');
@@ -1975,46 +2379,233 @@ function updateManualGuideline() {
     const bleedVal = document.querySelector('input[name="manualBleed"]:checked')?.value || 'no';
 
     if (!card) return;
+
     if (bleedVal === 'yes') {
         card.innerHTML = `
             <div style="background: #FFFFFF; padding: 15px; border-radius: 12px; border: 1px solid #FFCDD2; margin-top: 15px; text-align: left;">
-                <p style="margin: 0 0 10px 0; font-size: 16px; font-weight: bold; color: #D32F2F; display: flex; align-items: center; gap: 8px;">⚠️ คำแนะนำ: พบภาวะเลือดออก</p>
-                <div style="background: #FFEBEE; border-left: 5px solid #D32F2F; padding: 12px; border-radius: 4px 8px 8px 4px; color: #C62828; font-size: 15px; font-weight: 500;">ให้ Vitamin K1 และพิจารณาการรักษาตามแนวทาง</div>
-            </div>`;
-        card.style.display = 'block'; return;
+                <p style="margin: 0 0 10px 0; font-size: 16px; font-weight: bold; color: #D32F2F; display: flex; align-items: center; gap: 8px;">
+                    ⚠️ คำแนะนำ: พบภาวะเลือดออก
+                </p>
+                <div style="background: #FFEBEE; border-left: 5px solid #D32F2F; padding: 12px; border-radius: 4px 8px 8px 4px; color: #C62828; font-size: 15px; font-weight: 500;">
+                    ให้ Vitamin K1 และพิจารณาการรักษาตามแนวทาง
+                </div>
+            </div>
+        `;
+        card.style.display = 'block';
+        return;
     }
 
-    const inr = parseFloat(inrInput.value); const weeklyDose = parseFloat(weeklyDoseInput.value);
+    const inr = parseFloat(inrInput.value);
+    const weeklyDose = parseFloat(weeklyDoseInput.value);
+
     if (isNaN(inr) || isNaN(weeklyDose) || inrInput.value.trim() === '' || weeklyDoseInput.value.trim() === '') {
-        card.style.display = 'none'; return;
+        card.style.display = 'none';
+        return;
     }
 
-    let adj = { minPct: 0, maxPct: 0, avgPct: 0, note: '' };
-    if (inr < 1.5) { adj.minPct = 0.10; adj.maxPct = 0.20; adj.avgPct = 0.15; adj.note = 'เพิ่มขนาดยารายสัปดาห์ 10–20%'; }
-    else if (inr >= 1.5 && inr < 2.0) { adj.minPct = 0.05; adj.maxPct = 0.10; adj.avgPct = 0.075; adj.note = 'เพิ่ม 5–10% หรือพิจารณาไม่ปรับ แต่ติดตาม INR บ่อยขึ้น'; }
-    else if (inr >= 2.0 && inr < 3.1) { adj.minPct = 0; adj.maxPct = 0; adj.avgPct = 0; adj.note = 'ไม่ต้องปรับยา'; }
-    else if (inr >= 3.1 && inr < 4.0) { adj.minPct = -0.10; adj.maxPct = -0.05; adj.avgPct = -0.075; adj.note = 'ลดขนาดยารายสัปดาห์ 5–10%'; }
-    else if (inr >= 4.0 && inr < 5.0) { adj.minPct = -0.10; adj.maxPct = -0.10; adj.avgPct = -0.10; adj.note = 'หยุดยา 1 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 10%'; }
-    else if (inr >= 5.0 && inr < 9.0) { adj.minPct = -0.20; adj.maxPct = -0.20; adj.avgPct = -0.20; adj.note = 'หยุดยา 2 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 20% — พิจารณาให้ Vitamin K₁รับประทาน'; }
-    else if (inr >= 9.0) { adj.minPct = null; adj.maxPct = null; adj.avgPct = null; adj.note = 'ให้ Vitamin K1รับประทาน 2.5-5mg และติดตาม INR อย่างใกล้ชิด'; }
+    let adj = {
+        minPct: 0,
+        maxPct: 0,
+        avgPct: 0,
+        note: ''
+    };
+
+    if (inr < 1.5) {
+        adj.minPct = 0.10;
+        adj.maxPct = 0.20;
+        adj.avgPct = 0.15;
+        adj.note = 'เพิ่มขนาดยารายสัปดาห์ 10–20%';
+    } else if (inr >= 1.5 && inr < 2.0) {
+        adj.minPct = 0.05;
+        adj.maxPct = 0.10;
+        adj.avgPct = 0.075;
+        adj.note = 'เพิ่ม 5–10% หรือพิจารณาไม่ปรับ แต่ติดตาม INR บ่อยขึ้น';
+    } else if (inr >= 2.0 && inr < 3.1) {
+        adj.minPct = 0;
+        adj.maxPct = 0;
+        adj.avgPct = 0;
+        adj.note = 'ไม่ต้องปรับยา';
+    } else if (inr >= 3.1 && inr < 4.0) {
+        adj.minPct = -0.10;
+        adj.maxPct = -0.05;
+        adj.avgPct = -0.075;
+        adj.note = 'ลดขนาดยารายสัปดาห์ 5–10%';
+    } else if (inr >= 4.0 && inr < 5.0) {
+        adj.minPct = -0.10;
+        adj.maxPct = -0.10;
+        adj.avgPct = -0.10;
+        adj.note = 'หยุดยา 1 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 10%';
+    } else if (inr >= 5.0 && inr < 9.0) {
+        adj.minPct = -0.20;
+        adj.maxPct = -0.20;
+        adj.avgPct = -0.20;
+        adj.note = 'หยุดยา 2 วัน แล้วกลับมาเริ่มด้วยขนาดที่ลดลง 20% — พิจารณาให้ Vitamin K₁รับประทาน';
+    } else if (inr >= 9.0) {
+        adj.minPct = null;
+        adj.maxPct = null;
+        adj.avgPct = null;
+        adj.note = 'ให้ Vitamin K1รับประทาน 2.5-5mg และติดตาม INR อย่างใกล้ชิด';
+    }
 
     if (adj.minPct === null) {
-        card.innerHTML = `<p style="margin: 0; font-size: 15px; color: #263238; line-height: 1.6;"><strong>คำแนะนำ:</strong> INR = ${inr.toFixed(2)} <span style="color:#E53935;font-weight:700;">➔</span> ${adj.note}</p>`;
-        card.style.display = 'block'; return;
+        card.innerHTML = `
+            <p style="margin: 0; font-size: 15px; color: #263238; line-height: 1.6;">
+                <strong>คำแนะนำ:</strong> INR = ${inr.toFixed(2)} <span style="color:#E53935;font-weight:700;">➔</span> ${adj.note}
+            </p>
+        `;
+        card.style.display = 'block';
+        return;
     }
 
-    const minDose = weeklyDose * (1 + adj.minPct); const maxDose = weeklyDose * (1 + adj.maxPct); const avgDose = weeklyDose * (1 + adj.avgPct);
-    const formatPct = (val) => { return `${val >= 0 ? '+' : ''}${(val * 100).toFixed(1)}%`; };
+    const minDose = weeklyDose * (1 + adj.minPct);
+    const maxDose = weeklyDose * (1 + adj.maxPct);
+    const avgDose = weeklyDose * (1 + adj.avgPct);
+
+    const formatPct = (val) => {
+        const sign = val >= 0 ? '+' : '';
+        return `${sign}${(val * 100).toFixed(1)}%`;
+    };
+
+    const minPctStr = formatPct(adj.minPct);
+    const maxPctStr = formatPct(adj.maxPct);
+    const avgPctStr = formatPct(adj.avgPct);
+    const pctColor = adj.avgPct >= 0 ? '#2E7D32' : '#C62828';
 
     card.innerHTML = `
-        <p style="margin: 0 0 10px 0; font-size: 15px; font-weight: 500; color: #263238; line-height: 1.5;"><strong>คำแนะนำ:</strong> INR = ${inr.toFixed(2)} <span style="color:#E53935;font-weight:700;">➔</span> ${adj.note}</p>
-        <p style="margin: 0 0 6px 0; font-size: 15px; color: #263238; line-height: 1.5;">ขนาดยาใหม่ต่อสัปดาห์ (mg) : <strong style="font-weight:600;">${minDose.toFixed(2)} — ${maxDose.toFixed(2)}</strong> <strong style="color: ${adj.avgPct >= 0 ? '#2E7D32' : '#C62828'};">( ${formatPct(adj.minPct)} — ${formatPct(adj.maxPct)} )</strong></p>
-        <p style="margin: 0; font-size: 15px; color: #263238; line-height: 1.5;">( เฉลี่ย ${avgDose.toFixed(2)} mg / <strong style="color: ${adj.avgPct >= 0 ? '#2E7D32' : '#C62828'};">${formatPct(adj.avgPct)}</strong> )</p>`;
+        <p style="margin: 0 0 10px 0; font-size: 15px; font-weight: 500; color: #263238; line-height: 1.5;">
+            <strong>คำแนะนำ:</strong> INR = ${inr.toFixed(2)} <span style="color:#E53935;font-weight:700;">➔</span> ${adj.note}
+        </p>
+        <p style="margin: 0 0 6px 0; font-size: 15px; color: #263238; line-height: 1.5;">
+            ขนาดยาใหม่ต่อสัปดาห์ (mg) : <strong style="font-weight:600; font-size: 15.5px;">${minDose.toFixed(2)} — ${maxDose.toFixed(2)}</strong> 
+            <strong style="color: ${pctColor}; font-weight:600; font-size: 15.5px;">( ${minPctStr} — ${maxPctStr} )</strong>
+        </p>
+        <p style="margin: 0; font-size: 15px; color: #263238; line-height: 1.5;">
+            ( เฉลี่ย ${avgDose.toFixed(2)} mg / <strong style="color: ${pctColor}; font-weight:600;">${avgPctStr}</strong> )
+        </p>
+    `;
     card.style.display = 'block';
 
     const appropriateTargetDose = roundHalf(avgDose);
     const targetInput = document.getElementById('manualTargetDoseValue');
-    if (targetInput) targetInput.value = appropriateTargetDose.toFixed(1);
+    if (targetInput) {
+        targetInput.value = appropriateTargetDose.toFixed(1);
+    }
+}
+
+function calculateComparison(isManualClick) {
+    const initialDoseInput = document.getElementById('initialWeeklyDose');
+    const daysInput = document.getElementById('dispenseDays');
+    const resultDiv = document.getElementById('comparisonResult');
+
+    if (!initialDoseInput || !daysInput || !resultDiv) return;
+
+    const initialWeeklyDose = parseFloat(initialDoseInput.value) || 0;
+    const dispenseDays = parseInt(daysInput.value) || 7; 
+    
+    let totalWeeklyMg = 0;
+    let total3mgPillsFor7Days = 0;
+    let total2mgPillsFor7Days = 0;
+
+    const allDoseRows = document.querySelectorAll('.standalone-calculator .dose-input-row');
+    
+    let rangeError = false;
+
+    allDoseRows.forEach(row => {
+        const mg = parseInt(row.getAttribute('data-mg'));
+        const pillCountInput = row.querySelector('.pill-count');
+        const dayCountInput = row.querySelector('.day-count');
+        
+        if (!pillCountInput || !dayCountInput) return;
+        
+        const pillCount = parseFloat(pillCountInput.value) || 0;
+        const dayCount = parseInt(dayCountInput.value) || 0;
+        
+        if (dayCount < 0 || dayCount > 7) {
+            rangeError = true;
+            return; 
+        }
+        
+        const weeklyMgFromRow = pillCount * mg * dayCount;
+        totalWeeklyMg += weeklyMgFromRow;
+        
+        if (mg === 3) {
+            total3mgPillsFor7Days += pillCount * dayCount;
+        } else if (mg === 2) {
+            total2mgPillsFor7Days += pillCount * dayCount;
+        }
+    });
+
+    if (rangeError) {
+        resultDiv.innerHTML = `<p style="color: #E53935; font-weight: bold;">⚠️ จำนวนวันสำหรับกินยาต้องอยู่ระหว่าง 0 ถึง 7 วัน</p>`;
+        resultDiv.style.display = 'block';
+        return;
+    }
+    
+    if (totalWeeklyMg === 0 && !isManualClick) {
+        const allEmpty = Array.from(allDoseRows).every(row => {
+            const pillCountInput = row.querySelector('.pill-count');
+            const dayCountInput = row.querySelector('.day-count');
+            return (!pillCountInput.value || pillCountInput.value.trim() === '0') && 
+                   (!dayCountInput.value || dayCountInput.value.trim() === '0');
+        });
+        
+        if(allEmpty) {
+            resultDiv.style.display = 'none';
+            return;
+        }
+    }
+    
+    totalWeeklyMg = roundTwoDecimals(totalWeeklyMg);
+    const dailyMg = roundTwoDecimals(totalWeeklyMg / 7);
+    const diffMg = roundTwoDecimals(totalWeeklyMg - initialWeeklyDose);
+    const diffPct = initialWeeklyDose === 0 ? 
+        (totalWeeklyMg === 0 ? 0 : 100) : 
+        roundTwoDecimals((diffMg / initialWeeklyDose) * 100);
+    
+    if(dispenseDays <= 0) {
+        resultDiv.innerHTML = `<p style="color: #E53935; font-weight: bold;">⚠️ จำนวนวันนัดที่ต้องการจ่ายยาต้องมีค่ามากกว่า 0 วัน</p>`;
+        resultDiv.style.display = 'block';
+        return;
+    }
+
+    const final3mgPills = Math.ceil(total3mgPillsFor7Days * (dispenseDays / 7));
+    const final2mgPills = Math.ceil(total2mgPillsFor7Days * (dispenseDays / 7));
+
+    let resultHTML = `
+        <p>ขนาดยาใหม่ต่อสัปดาห์ (7 วัน): <strong>${totalWeeklyMg.toFixed(2)} mg</strong> (เฉลี่ย ${dailyMg.toFixed(2)} mg/วัน)</p>
+        <p>ความแตกต่างจากขนาดยาเดิม (${initialWeeklyDose.toFixed(2)} mg): <strong style="color: ${diffMg >= 0 ? 'red' : 'green'};">${diffMg >= 0 ? '+' : ''}${diffMg.toFixed(2)} mg (${diffPct >= 0 ? '+' : ''}${diffPct.toFixed(2)}%)</strong></p>
+        <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+        <p>สรุปจำนวนเม็ดยาสำหรับ <strong>${dispenseDays} วันนัด</strong>:</p>
+        <p>Warfarin 3 mg: <strong>${final3mgPills} เม็ด</strong></p>
+        <p>Warfarin 2 mg: <strong>${final2mgPills} เม็ด</strong></p>
+    `;
+    
+    resultDiv.innerHTML = resultHTML;
+    resultDiv.style.display = 'block';
+}
+
+function clearData() {
+    const initialDoseInput = document.getElementById('initialWeeklyDose');
+    const daysInput = document.getElementById('dispenseDays');
+    const resultDiv = document.getElementById('comparisonResult');
+
+    if (!initialDoseInput || !daysInput || !resultDiv) return;
+
+    document.querySelectorAll('.standalone-calculator .dose-input-group').forEach(container => {
+        const rows = container.querySelectorAll('.dose-input-row');
+        for (let i = 1; i < rows.length; i++) {
+            rows[i].remove();
+        }
+        const pillCountInput = rows[0].querySelector('.pill-count');
+        const dayCountInput = rows[0].querySelector('.day-count');
+        if (pillCountInput) pillCountInput.value = '';
+        if (dayCountInput) dayCountInput.value = '';
+    });
+
+    initialDoseInput.value = '';
+    daysInput.value = '';
+    resultDiv.style.display = 'none';
+    resultDiv.innerHTML = '';
 }
 </script>
 </body>
